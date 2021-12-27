@@ -5,6 +5,7 @@
     <vendor>girg-z</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.girgz.m2phpstormrunner.services.MyApplicationService"/>
@@ -12,7 +13,12 @@
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.girgz.m2phpstormrunner.listeners.MyProjectManagerListener"
+        <listener class="com.github.girgz.m2phpstormrunner.listeners.ProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+<!--        <toolWindow id="M2 Toolbox" secondary="true" icon="AllIcons.RunConfigurations.Application" anchor="right"-->
+<!--                    factoryClass="com.github.girgz.m2phpstormrunner.toolWindow.MyToolWindowFactory"/>-->
+<!--    </extensions>-->
 </idea-plugin>
