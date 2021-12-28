@@ -1,5 +1,6 @@
 package com.github.girgz.m2phpstormrunner.listeners
 
+import com.github.girgz.m2phpstormrunner.Settings
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener
@@ -21,6 +22,12 @@ internal class ProjectManagerListener : ProjectManagerListener {
         val magentoFolderValid: Boolean = MagentoBasePathUtil.isMagentoFolderValid(project.basePath);
         val magentoVersion: String? = MagentoVersion.get(project, project.basePath!!)
 
-        Messages.showMessageDialog(magentoVersion, "Info", Messages.getInformationIcon())
+        val settings = Settings.getInstance()
+
+        // Cool! https://kotlinlang.org/docs/scope-functions.html
+        magentoVersion?.let { settings.setMagentoVersion(it) }
+
+        // Test will fail here
+        // Messages.showMessageDialog(magentoVersion, "Info", Messages.getInformationIcon())
     }
 }

@@ -10,6 +10,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.girgz.m2phpstormrunner.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.girgz.m2phpstormrunner.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.girgz.m2phpstormrunner.Settings"/>
     </extensions>
 
     <applicationListeners>
