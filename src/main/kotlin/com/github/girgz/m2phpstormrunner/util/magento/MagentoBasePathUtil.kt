@@ -8,7 +8,7 @@ class MagentoBasePathUtil {
     companion object {
         fun isMagentoFolderValid(path: String?): Boolean {
             if (path.isNullOrBlank()) {
-                return false;
+                return false
             }
 
             val file = LocalFileSystem.getInstance().findFileByPath(path)

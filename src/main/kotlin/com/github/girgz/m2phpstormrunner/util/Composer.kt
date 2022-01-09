@@ -16,7 +16,7 @@ class ComposerJson constructor(private val json: JsonObject) {
     }
 
     fun getPackageVersion(packageName: String, section: String = REQUIRE): String? {
-        val sectionProperty = this.json.findProperty(section)?.value;
+        val sectionProperty = this.json.findProperty(section)?.value
         if (sectionProperty is JsonObject) {
             val packageProperty = sectionProperty.findProperty(packageName)
             val value = packageProperty?.value
@@ -35,9 +35,9 @@ class ComposerJson constructor(private val json: JsonObject) {
             return projectVersion ?: packageVersion
         } else {
             if (compareVersion(projectVersion, packageVersion)){
-                return projectVersion;
+                return projectVersion
             }
-            return packageVersion;
+            return packageVersion
         }
     }
 
@@ -46,7 +46,7 @@ class ComposerJson constructor(private val json: JsonObject) {
      */
     private fun compareVersion(version1: String, version2: String): Boolean {
         if (version1 == version2) {
-            return true;
+            return true
         }
 
         val regex: Regex = "\\d".toRegex()

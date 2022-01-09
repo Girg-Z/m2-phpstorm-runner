@@ -7,7 +7,6 @@ import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.PsiManager
 import com.intellij.psi.util.PsiTreeUtil
-import org.apache.commons.lang.StringUtils
 
 class MagentoVersion {
 
@@ -27,13 +26,13 @@ class MagentoVersion {
                 this.jsonObject = jsonObject
 
                 val composerJson = ComposerJson(jsonObject)
-                return composerJson.getMagentoVersion();
+                return composerJson.getMagentoVersion()
             }
             return null
         }
 
         private fun getComposerJsonPath(magentoPath: String): String {
-            return "$magentoPath/composer.json";
+            return "$magentoPath/composer.json"
         }
     }
 }
